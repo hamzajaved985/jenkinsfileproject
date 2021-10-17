@@ -2,9 +2,9 @@ pipeline {
     //def mavenHome = tool name: "maven3.8.3"
     agent any
     //properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), pipelineTriggers([cron('* * * * *')])])
-    triggers{
+    /*triggers{
        cron('* * * * *')
-    }
+    }*/
     stages{
         stage('checkout'){
             steps{
@@ -26,12 +26,12 @@ pipeline {
             }
             }            
         }
-        stage('emailnotification'){
+        /*stage('emailnotification'){
             steps{
                 emailext body: '''success ,
 i love you ''', subject: 'build is done janu', to: 'hamzajaved985@gmail.com'
                 
             }
-        }
+        }*/
     }    
 }
